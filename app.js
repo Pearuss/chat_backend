@@ -1,6 +1,14 @@
 require("dotenv").config();
-const db = require("./config/database");
-db();
+// const db = require("./config/database");
+// db();
+const mongoose = require("mongoose");
+
+mongoose
+  .connect(
+    "mongodb+srv://root:taokobiet123@cluster0.3vkfr.mongodb.net/chatngay?retryWrites=true&w=majority"
+  )
+  .then(() => console.log("Successfully"))
+  .catch((e) => log.error(e));
 
 const cors = require("cors");
 
