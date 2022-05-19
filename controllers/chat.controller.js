@@ -254,3 +254,8 @@ exports.getFriend = async (req, res) => {
     return res.json({ id: chat.u1.toString() });
   }
 };
+exports.deleteMessage = async (req, res) => {
+  await Message.deleteOne({ _id: req.params.msgId });
+
+  res.json({ message: 200 });
+};
